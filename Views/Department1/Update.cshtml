@@ -1,0 +1,48 @@
+﻿@model Day_7.Models.Department
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewBag.Tittle = "Update";
+}
+
+<div class="container">
+    <form asp-action="Update" asp-controller="Department1" method="post">
+
+        <div class="form-group">
+            <label asp-for="@Model.DeptId" class="form-label mt-4">Id</label>
+            <input asp-for="@Model.DeptId" class="form-control">
+            <span asp-validation-for="@Model.DeptId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.DeptName" class="form-label mt-4">Name</label>
+            <input asp-for="@Model.DeptName" class="form-control">
+            <span asp-validation-for="@Model.DeptName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.DeptDesc" class="form-label mt-4">DeptDesc</label>
+            <input asp-for="@Model.DeptDesc" class="form-control">
+            <span asp-validation-for="@Model.DeptDesc" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.DeptLocation" class="form-label mt-4">DeptLocation</label>
+            <input asp-for="@Model.DeptLocation" class="form-control">
+            <span asp-validation-for="@Model.DeptLocation" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.DeptLocation" class="form-label mt-4">DeptLocation</label>
+            <select asp-for="@Model.DeptManager" asp-items="@ViewBag.Instructor" class="form-select"></select>
+            <span asp-validation-for="@Model.DeptLocation" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Hiredate" class="form-label mt-4">Hiredate</label>
+            <input asp-for="@Model.Hiredate" class="form-control">
+            <span asp-validation-for="@Model.Hiredate" class="text-danger"></span>
+        </div>
+        <br />
+        <button class="btn btn-outline-primary" type="submit">Save</button>
+    </form>
+
+</div>
